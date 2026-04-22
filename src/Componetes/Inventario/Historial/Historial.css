@@ -1,0 +1,142 @@
+.historial-container {
+  padding: 30px;
+  background-color: #f4f6fb;
+  min-height: 100vh;
+  font-family: Arial, sans-serif;
+}
+
+.titulo {
+  font-size: 26px;
+  font-weight: bold;
+}
+
+.subtitulo {
+  color: #6b7280;
+  margin-bottom: 20px;
+}
+
+/* Filtros */
+.filtros-barra {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.buscador {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: #fff;
+  padding: 10px;
+  border-radius: 10px;
+  border: 1px solid #e5e7eb;
+  width: 280px;
+}
+
+.buscador input {
+  border: none;
+  outline: none;
+  width: 100%;
+}
+
+select,
+input[type="date"] {
+  padding: 10px;
+  border-radius: 8px;
+  border: 1px solid #e5e7eb;
+}
+
+/* Botones */
+.btn-filtrar {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  background: #2563eb;
+  color: #fff;
+  border: none;
+  padding: 10px 14px;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.btn-limpiar {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  background: #e5e7eb;
+  border: none;
+  padding: 10px 14px;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+/* Tabla */
+.tabla-container {
+  background: #fff;
+  border-radius: 14px;
+  padding: 15px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+}
+
+.tabla {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.tabla thead {
+  background: #f1f5f9;
+}
+
+.tabla th,
+.tabla td {
+  padding: 12px;
+  text-align: left;
+  border-bottom: 1px solid #eee;
+}
+
+.bold {
+  font-weight: bold;
+}
+
+/* Badges */
+.badge {
+  padding: 6px 12px;
+  border-radius: 10px;
+  font-size: 12px;
+}
+
+.entrada {
+  background: #d1fae5;
+  color: #065f46;
+}
+
+.salida {
+  background: #fee2e2;
+  color: #b91c1c;
+}
+
+/* Footer */
+.footer-tabla {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 15px;
+}
+
+.paginacion {
+  display: flex;
+  gap: 5px;
+}
+
+.pagina {
+  padding: 8px 12px;
+  border-radius: 8px;
+  background: #e5e7eb;
+  cursor: pointer;
+}
+
+.pagina.activa {
+  background: #2563eb;
+  color: #fff;
+}

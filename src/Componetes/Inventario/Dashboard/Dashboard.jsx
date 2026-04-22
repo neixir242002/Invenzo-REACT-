@@ -1,160 +1,156 @@
-// import React from 'react'
+import React from 'react'
+import './Dashboard.css'
+const Dashboard = () => {
+  return (
+        <nav>
+            <div>
+                <div class="welcome-section">
+                        <h1>Bienvenido de nuevo,  Pablo</h1>
+                        <p>Aquí está el resumen de tu inventario.</p>
+                </div>
+                <div class="dash-header-actions">
+                        <div class="btn-group">
+                            <a href="#" class="btn export">
+                                <i data-lucide="download"></i> Exportar
+                            </a>
+                            <label for="modal-toggle" class="btn primary">
+                                <i data-lucide="plus"></i> Nuevo Producto
+                            </label>
+                        </div>
+                </div>
+            </div>
+        <section class="metric-cards">
+            <div class="metric-card">
+                <div>
+                    <div class="card-top">
+                        <div class="card-title">Total Productos</div>
+                        <div class="card-icon total"><i data-lucide="package"></i></div>
+                    </div>
+                    <div class="card-number">
+                        30
+                    </div>
+                </div>
+                <div class="card-trend negative">
+                    <i data-lucide="trending-down"></i>
+                    <span>-2.13%</span> desde el mes pasado
+                </div>
+            </div>
 
-// const Dashboard = () => {
-//   return (
-//     <div class="welcome-section">
-//         <h1>Bienvenido de nuevo,  {{ request.session.usuario_nombre }}</h1>
-//         <p>Aquí está el resumen de tu inventario.</p>
-//     </div>
+            <div class="metric-card">
+                <div>
+                    <div class="card-top">
+                        <div class="card-title">Stock Bajo</div>
+                        <div class="card-icon low"><i data-lucide="alert-triangle"></i></div>
+                    </div>
+                    <div class="card-number">
+                        Bajo
+                    </div>
+                </div>
+                <div class="card-trend negative">
+                    <i data-lucide="trending-up"></i>
+                    <span>+10%</span> desde el mes pasado
+                </div>
+            </div>
 
+            <div class="metric-card">
+                <div>
+                    <div class="card-top">
+                        <div class="card-title">Movimientos Hoy</div>
+                        <div class="card-icon move"><i data-lucide="refresh-cw"></i></div>
+                    </div>
+                    <div class="card-number">
+                         movimientos_hoy 
+                    </div>
+                </div>
+                <div class="card-trend positive">
+                    <i data-lucide="trending-up"></i>
+                    <span>+5.2%</span> desde el mes pasado
+                </div>
+            </div>
 
-//     <div class="dash-header-actions">
-//         <div class="btn-group">
-//             <a href="#" class="btn export">
-//                 <i data-lucide="download"></i> Exportar
-//             </a>
-//             <label for="modal-toggle" class="btn primary">
-//                 <i data-lucide="plus"></i> Nuevo Producto
-//             </label>
-//         </div>
-//     </div>
+            <div class="metric-card">
+                <div>
+                    <div class="card-top">
+                        <div class="card-title">Valor Total</div>
+                        <div class="card-icon value"><i data-lucide="dollar-sign"></i></div>
+                    </div>
+                    <div class="card-number value">
+                        valor_total
+                    </div>
+                </div>
+                <div class="card-trend positive">
+                    <i data-lucide="trending-up"></i>
+                    <span>+8.1%</span> desde el mes pasado
+                </div>
+            </div>
+        </section>
+              {/* <section class="dashboard-grid">
+            <div class="left-column">
+                <div class="section">
+                    <div class="section-header">
+                        <h2>Tendencia del Inventario</h2>
+                        <a href="#" class="view-details">Ver Detalles</a>
+                    </div>
+                    <p class="welcome-message">Valor total del inventario por mes</p>
+                    <div class="chart-container" style="height: 250px;">
+                        <canvas id="tendenciaChart"></canvas>
+                    </div>
+                </div>
 
-//     <section class="metric-cards">
-//         <div class="metric-card">
-//             <div>
-//                 <div class="card-top">
-//                     <div class="card-title">Total Productos</div>
-//                     <div class="card-icon total"><i data-lucide="package"></i></div>
-//                 </div>
-//                 <div class="card-number">
-//                     {{ total_productos|default:"0" }}
-//                 </div>
-//             </div>
-//             <div class="card-trend negative">
-//                 <i data-lucide="trending-down"></i>
-//                 <span>-2.13%</span> desde el mes pasado
-//             </div>
-//         </div>
+                <div class="section">
+                    <div class="section-header">
+                        <h2>Movimientos de Inventario</h2>
+                        <a href="#" class="view-details">Ver Detalles</a>
+                    </div>
+                    <p class="welcome-message">Entradas y salidas por día</p>
+                    <div class="chart-container" style="height: 180px;">
+                        <canvas id="movimientosChart"></canvas>
+                    </div>
+                </div>
+            </div>
 
-//         <div class="metric-card">
-//             <div>
-//                 <div class="card-top">
-//                     <div class="card-title">Stock Bajo</div>
-//                     <div class="card-icon low"><i data-lucide="alert-triangle"></i></div>
-//                 </div>
-//                 <div class="card-number">
-//                     {{ stock_bajo|default:"0" }}
-//                 </div>
-//             </div>
-//             <div class="card-trend negative">
-//                 <i data-lucide="trending-up"></i>
-//                 <span>+10%</span> desde el mes pasado
-//             </div>
-//         </div>
+            <div class="right-column">
+                <div class="section">
+                    <div class="section-header">
+                        <h2>Distribución por Categorías</h2>
+                    </div>
+                    <div class="chart-container" style="height: 180px; display: flex; justify-content: center; align-items: center;">
+                        <canvas id="categoriasChart" style="max-height: 100%; max-width: 100%;"></canvas>
+                    </div>
+                </div>
+                
+                </div>
 
-//         <div class="metric-card">
-//             <div>
-//                 <div class="card-top">
-//                     <div class="card-title">Movimientos Hoy</div>
-//                     <div class="card-icon move"><i data-lucide="refresh-cw"></i></div>
-//                 </div>
-//                 <div class="card-number">
-//                     {{ movimientos_hoy|default:"0" }}
-//                 </div>
-//             </div>
-//             <div class="card-trend positive">
-//                 <i data-lucide="trending-up"></i>
-//                 <span>+5.2%</span> desde el mes pasado
-//             </div>
-//         </div>
+                <div class="activity-list">
+                    <div class="activity-header">
+                        <div>Nombre</div>
+                        <div>Código</div>
+                        <div>Categoría</div>
+                        <div>Cantidad</div>
+                        <div>Stock Mín</div>
+                        <div>Stock Máx</div>
+                        <div>Precio</div>
+                        <div>Fecha</div>
+                    </div>
+                
+                    <div class="activity-row">
+                        <div class="activity-cell">nombre </div>
+                        <div class="activity-cell">codigo</div>
+                        <div class="activity-cell">categoria.nombre</div>
+                        <div class="activity-cell">cantidad</div>
+                        <div class="activity-cell">stock_minimo</div>
+                        <div class="activity-cell">stock_maximo</div>
+                        <div class="activity-cell">$precio</div>
+                        <div class="activity-cell">fecha_ingreso</div>
+                    </div>
+                    <div class="activity-row">
+                        <div class="activity-cell" colspan="8">No hay productos recientes.</div>
+                    </div>
+                </div>
+                
+        </section> */}
+        </nav>
+  )
+}
 
-//         <div class="metric-card">
-//             <div>
-//                 <div class="card-top">
-//                     <div class="card-title">Valor Total</div>
-//                     <div class="card-icon value"><i data-lucide="dollar-sign"></i></div>
-//                 </div>
-//                 <div class="card-number value">
-//                     ${{ valor_total|default:"0" }}
-//                 </div>
-//             </div>
-//             <div class="card-trend positive">
-//                 <i data-lucide="trending-up"></i>
-//                 <span>+8.1%</span> desde el mes pasado
-//             </div>
-//         </div>
-//     </section>
-
-//     <section class="dashboard-grid">
-//         <div class="left-column">
-//             <div class="section">
-//                 <div class="section-header">
-//                     <h2>Tendencia del Inventario</h2>
-//                     <a href="#" class="view-details">Ver Detalles</a>
-//                 </div>
-//                 <p class="welcome-message">Valor total del inventario por mes</p>
-//                 <div class="chart-container" style="height: 250px;">
-//                     <canvas id="tendenciaChart"></canvas>
-//                 </div>
-//             </div>
-
-//             <div class="section">
-//                 <div class="section-header">
-//                     <h2>Movimientos de Inventario</h2>
-//                     <a href="#" class="view-details">Ver Detalles</a>
-//                 </div>
-//                 <p class="welcome-message">Entradas y salidas por día</p>
-//                 <div class="chart-container" style="height: 180px;">
-//                     <canvas id="movimientosChart"></canvas>
-//                 </div>
-//             </div>
-//         </div>
-
-//         <div class="right-column">
-//             <div class="section">
-//                 <div class="section-header">
-//                     <h2>Distribución por Categorías</h2>
-//                 </div>
-//                 <div class="chart-container" style="height: 180px; display: flex; justify-content: center; align-items: center;">
-//                     <canvas id="categoriasChart" style="max-height: 100%; max-width: 100%;"></canvas>
-//                 </div>
-//             </div>
-            
-//             </div>
-
-//             <div class="activity-list">
-//                 <div class="activity-header">
-//                     <div>Nombre</div>
-//                     <div>Código</div>
-//                     <div>Categoría</div>
-//                     <div>Cantidad</div>
-//                     <div>Stock Mín</div>
-//                     <div>Stock Máx</div>
-//                     <div>Precio</div>
-//                     <div>Fecha</div>
-//                 </div>
-            
-//                 {% for p in productos_recientes %}
-//                 <div class="activity-row">
-//                     <div class="activity-cell">{{ p.nombre }}</div>
-//                     <div class="activity-cell">{{ p.codigo }}</div>
-//                     <div class="activity-cell">{{ p.categoria.nombre }}</div>
-//                     <div class="activity-cell">{{ p.cantidad }}</div>
-//                     <div class="activity-cell">{{ p.stock_minimo }}</div>
-//                     <div class="activity-cell">{{ p.stock_maximo }}</div>
-//                     <div class="activity-cell">${{ p.precio }}</div>
-//                     <div class="activity-cell">{{ p.fecha_ingreso|date:"d/m/Y" }}</div>
-//                 </div>
-//                 {% empty %}
-//                 <div class="activity-row">
-//                     <div class="activity-cell" colspan="8">No hay productos recientes.</div>
-//                 </div>
-//                 {% endfor %}
-//             </div>
-            
-//         </div>
-    
-//   )
-// }
-
-// export default Dashboard
+export default Dashboard
