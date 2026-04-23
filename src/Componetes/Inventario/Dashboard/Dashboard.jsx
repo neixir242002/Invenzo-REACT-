@@ -1,5 +1,6 @@
 import React from 'react'
 import './Dashboard.css'
+import DashboardGrid from './DashboardGrid'
 const Dashboard = () => {
   return (
         <nav>
@@ -84,71 +85,7 @@ const Dashboard = () => {
                 </div>
             </div>
         </section>
-              {/* <section class="dashboard-grid">
-            <div class="left-column">
-                <div class="section">
-                    <div class="section-header">
-                        <h2>Tendencia del Inventario</h2>
-                        <a href="#" class="view-details">Ver Detalles</a>
-                    </div>
-                    <p class="welcome-message">Valor total del inventario por mes</p>
-                    <div class="chart-container" style="height: 250px;">
-                        <canvas id="tendenciaChart"></canvas>
-                    </div>
-                </div>
-
-                <div class="section">
-                    <div class="section-header">
-                        <h2>Movimientos de Inventario</h2>
-                        <a href="#" class="view-details">Ver Detalles</a>
-                    </div>
-                    <p class="welcome-message">Entradas y salidas por día</p>
-                    <div class="chart-container" style="height: 180px;">
-                        <canvas id="movimientosChart"></canvas>
-                    </div>
-                </div>
-            </div>
-
-            <div class="right-column">
-                <div class="section">
-                    <div class="section-header">
-                        <h2>Distribución por Categorías</h2>
-                    </div>
-                    <div class="chart-container" style="height: 180px; display: flex; justify-content: center; align-items: center;">
-                        <canvas id="categoriasChart" style="max-height: 100%; max-width: 100%;"></canvas>
-                    </div>
-                </div>
-                
-                </div>
-
-                <div class="activity-list">
-                    <div class="activity-header">
-                        <div>Nombre</div>
-                        <div>Código</div>
-                        <div>Categoría</div>
-                        <div>Cantidad</div>
-                        <div>Stock Mín</div>
-                        <div>Stock Máx</div>
-                        <div>Precio</div>
-                        <div>Fecha</div>
-                    </div>
-                
-                    <div class="activity-row">
-                        <div class="activity-cell">nombre </div>
-                        <div class="activity-cell">codigo</div>
-                        <div class="activity-cell">categoria.nombre</div>
-                        <div class="activity-cell">cantidad</div>
-                        <div class="activity-cell">stock_minimo</div>
-                        <div class="activity-cell">stock_maximo</div>
-                        <div class="activity-cell">$precio</div>
-                        <div class="activity-cell">fecha_ingreso</div>
-                    </div>
-                    <div class="activity-row">
-                        <div class="activity-cell" colspan="8">No hay productos recientes.</div>
-                    </div>
-                </div>
-                
-        </section> */}
+        <DashboardGrid/>
         </nav>
   )
 }
