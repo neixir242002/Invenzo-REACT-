@@ -1,0 +1,105 @@
+.login-box {
+  width: 100%;
+  max-width: 440px;
+  background: #ffffff;
+  padding: 2.5rem 2.25rem;
+  border-radius: 14px;
+  box-shadow: 0 12px 40px rgba(0, 119, 182, 0.15);
+}
+
+.login-box h1 {
+  margin: 0 0 4px;
+  color: #0077b6;
+  font-size: 28px;
+  font-weight: 700;
+  letter-spacing: -0.5px;
+}
+
+.login-box h2 {
+  margin: 0 0 6px;
+  font-size: 22px;
+  font-weight: 600;
+  color: #1a1a1a;
+}
+
+.login-box .subtitle {
+  margin: 0 0 1.5rem;
+  color: #6b7280;
+  font-size: 14px;
+}
+
+.login-box form {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.btn-submit {
+  width: 100%;
+  padding: 12px;
+  background: #0077b6;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-weight: 600;
+  font-size: 15px;
+  cursor: pointer;
+  transition: 0.3s;
+  margin-top: 6px;
+}
+
+.btn-submit:hover {
+  background: #005a91;
+  transform: translateY(-1px);
+}
+
+.forgot {
+  text-align: center;
+  margin: 14px 0;
+  font-size: 14px;
+}
+
+.forgot a {
+  color: #0077b6;
+  font-weight: 500;
+}
+
+.forgot a:hover {
+  text-decoration: underline;
+}
+
+.separator {
+  display: flex;
+  align-items: center;
+  text-align: center;
+  color: #9ca3af;
+  font-size: 13px;
+  margin: 18px 0;
+}
+
+.separator::before,
+.separator::after {
+  content: "";
+  flex: 1;
+  border-bottom: 1px solid #e5e7eb;
+}
+
+.separator span {
+  padding: 0 12px;
+}
+
+.register {
+  text-align: center;
+  margin-top: 18px;
+  font-size: 14px;
+  color: #4b5563;
+}
+
+.register a {
+  color: #0077b6;
+  font-weight: 600;
+}
+
+.register a:hover {
+  text-decoration: underline;
+}
