@@ -198,8 +198,8 @@ const Dashboard = () => {
                         <div>Precio</div>
                         <div>Fecha</div>
                     </div>
-                
-                    <div class="activity-row">
+                {/* AQUI BAN LOS DATOS REALES*/}
+                    {/* <div class="activity-row">
                         <div class="activity-cell">nombre </div>
                         <div class="activity-cell">codigo</div>
                         <div class="activity-cell">categoria.nombre</div>
@@ -208,7 +208,7 @@ const Dashboard = () => {
                         <div class="activity-cell">stock_maximo</div>
                         <div class="activity-cell">precio</div>
                         <div class="activity-cell">fecha_ingreso</div>
-                    </div>
+                    </div> */}
                     <div class="activity-row">
                         <div class="activity-cell" colspan="8">No hay productos recientes.</div>
                     </div>

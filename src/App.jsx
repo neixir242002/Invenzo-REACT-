@@ -8,18 +8,20 @@ import Historial from './Componetes/Inventario/Historial/Historial'
 import Gestor_Productos from './Componetes/Inventario/Gestor_Productos/Gestor_Productos'
 import Productos_Inactivos from './Componetes/Inventario/Productos_Inactivos/Productos_Inactivos'
 import Modal_Almacen from './Componetes/Inventario/Almacenamiento/Modal_Almacen'
+import Base from './Componetes/Base/Base'
 
 const App = () => {
   return (
     <>
       {/* <Almacenamiento/> */}
       {/* <Alerta_Stock/> */}
-      <Categorias/>
+      {/* <Categorias/> */}
       {/* <Control_Inventario/> */}
       {/* <Dashboard/> */}
       {/* <Historial/> */}
       {/* <Modal_Almacen/> */}
       {/* <Gestor_Productos/> */}
+      <Base/>
       {/* <Productos_Inactivos/> */}
     </>
   )
