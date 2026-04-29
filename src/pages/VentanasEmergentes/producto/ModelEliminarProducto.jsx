@@ -1,0 +1,35 @@
+import React from 'react'
+import "../../../Style/Models.css"
+const ModelEliminarProducto = () => {
+  return (
+<div class="modal-container">
+    <input type="checkbox" id="modal-eliminar-{{ producto.id }}" class="modal-toggle"/>
+
+    <div class="modal-backdrop">
+        <div class="modal-window-custom modal-small-custom">
+
+            <label for="modal-eliminar-{{ producto.id }}" class="modal-close-custom">✕</label>
+
+            <h2 class="modal-title-custom">Eliminar Producto</h2>
+
+            <p>
+                ¿Seguro que deseas eliminar  
+                Esta acción no se puede deshacer.
+            </p>
+
+            <div class="modal-actions-custom">
+                <label for="modal-eliminar-{{ producto.id }}" class="modal-btn-secondary">Cancelar</label>
+
+                <form method="POST" action="{% url 'invenzo:eliminar_producto' producto.id %}">
+                    <button type="submit" class="modal-btn-danger">Eliminar</button>
+                </form>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+  )
+}
+
+export default ModelEliminarProducto

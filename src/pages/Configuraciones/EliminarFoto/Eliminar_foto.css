@@ -1,0 +1,62 @@
+/* Fondo */
+body {
+    background: #f1f5f9;
+}
+
+/* Caja de confirmación */
+.confirm-box {
+    background: #fff;
+    padding: 25px;
+    border-radius: 14px;
+    max-width: 420px;
+    margin: 40px auto;
+    text-align: center;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+}
+
+/* Título */
+.confirm-box h3 {
+    color: #1e293b;
+    margin-bottom: 20px;
+    font-size: 18px;
+}
+
+/* Botones */
+.confirm-box form {
+    display: flex;
+    justify-content: center;
+    gap: 12px;
+}
+
+/* Botón eliminar */
+.btn-danger {
+    background: #dc2626;
+    color: #fff;
+    padding: 10px 16px;
+    border-radius: 8px;
+    border: none;
+    font-weight: 600;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.btn-danger:hover {
+    background: #b91c1c;
+    transform: scale(1.05);
+}
+
+/* Botón cancelar */
+.btn-secondary {
+    background: #e2e8f0;
+    color: #334155;
+    padding: 10px 16px;
+    border-radius: 8px;
+    border: none;
+    font-weight: 600;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.btn-secondary:hover {
+    background: #cbd5e1;
+}
