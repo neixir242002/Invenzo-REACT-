@@ -61,7 +61,6 @@ const App = () => {
         <Route path="alertas" element={<Alerta_Stock />} />
         <Route path="almacen" element={<Almacenamiento />} />
         
-        
         {/* Usuarios */}
         <Route path="usuarios" element={<GestionUsuarios />} />
 

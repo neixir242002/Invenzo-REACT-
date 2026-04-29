@@ -1,7 +1,10 @@
 import { useState } from "react";
 import './Gestion_usuarios.css'
+import ModelCrearUsuario from "../../VentanasEmergentes/usuario/ModelCrearUsuario";
 
 export default function GestionUsuarios() {
+    // ===== ESTADO DEL MODAL =====
+          const [openModal, setOpenModal] = useState(false);
 
     const [usuarios, setUsuarios] = useState([
         {
@@ -46,7 +49,7 @@ export default function GestionUsuarios() {
                     <p>Administra los usuarios y permisos</p>
                 </div>
 
-                <button className="btn-primary">
+                <button className="btn-primary"  onClick={() => setOpenModal(true)}>
                     <i data-lucide="user-plus"></i> Nuevo Usuario
                 </button>
             </section>
@@ -165,6 +168,10 @@ export default function GestionUsuarios() {
                 </table>
             </section>
 
+            {/* ===== MODAL ===== */}
+                  {openModal && (
+                    <ModelCrearUsuario cerrar ={() => setOpenModal(false)} />
+                  )}
         </div>
     );
 }

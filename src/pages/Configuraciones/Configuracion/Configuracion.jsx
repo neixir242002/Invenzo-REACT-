@@ -1,7 +1,13 @@
+import React, { useState } from "react";
 import { UserCog, Bell } from "lucide-react";
 import "./Configuracion.css";
+import ModelEditarUsuario from "../../VentanasEmergentes/usuario/ModelEditarUsuario";
+
 
 export const Configuracion = () => {
+    // ===== ESTADO DEL MODAL =====
+      const [openModal, setOpenModal] = useState(false);
+    //   const []
     return (
         <div>
 
@@ -17,7 +23,7 @@ export const Configuracion = () => {
                     <h3>Perfil</h3>
                     <p>Actualiza tus datos personales o cambia tu contraseña</p>
 
-                    <button className="btn-primary">
+                    <button className="btn-primary" onClick={() => setOpenModal(true)}>
                         Editar Perfil
                     </button>
                 </div>
@@ -33,7 +39,10 @@ export const Configuracion = () => {
                 </div>
 
             </div>
-
+                  {/* ===== MODAL ===== */}
+                  {openModal && (
+                    <ModelEditarUsuario cerrar={() => setOpenModal(false)} />
+                  )}
         </div>
     );
 };

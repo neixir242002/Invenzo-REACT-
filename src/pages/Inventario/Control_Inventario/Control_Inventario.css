@@ -17,6 +17,7 @@
 
 /* Card */
 .card {
+  width: auto;
   background: #fff;
   padding: 20px;
   border-radius: 14px;

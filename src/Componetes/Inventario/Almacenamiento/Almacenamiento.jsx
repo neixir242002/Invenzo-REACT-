@@ -1,16 +1,30 @@
-import React from "react";
+import React, { useState } from "react";
 import { Pencil, Trash2 } from "lucide-react";
 import "./Almacenamiento.css";
+import Modal_Almacen from "../../VentanasEmergentes/producto/Modal_Almacen";
 
 const Almacenamiento = () => {
+
+  // ===== ESTADO DEL MODAL =====
+  const [openModal, setOpenModal] = useState(false);
+
   return (
-    // LA VISTA DEL ALMACEN
     <div className="almacen-container">
+
+      {/* ===== HEADER ===== */}
       <div className="almacen-header">
         <h2>Almacenes</h2>
-        <button className="btn-agregar">+ Agregar Almacén</button>
+
+        {/* BOTÓN QUE ABRE EL MODAL */}
+        <button 
+          className="btn-agregar"
+          onClick={() => setOpenModal(true)}
+        >
+          + Agregar Almacén
+        </button>
       </div>
 
+      {/* ===== TABLA ===== */}
       <div className="tabla-container">
         <table className="tabla">
           <thead>
@@ -23,6 +37,7 @@ const Almacenamiento = () => {
               <th>Acciones</th>
             </tr>
           </thead>
+
           <tbody>
             <tr className="textconten">
               <td>Exito</td>
@@ -31,13 +46,11 @@ const Almacenamiento = () => {
               <td>Comida</td>
               <td>None</td>
               <td className="acciones">
-                {/*LOS ICONOS*/}
                 <Pencil size={18} className="icon-edit" />
                 <Trash2 size={18} className="icon-delete" />
-                {/*<span className="icon-edit">✏️</span>
-                <span className="icon-delete">🗑️</span> */}
               </td>
             </tr>
+
             <tr className="textconten">
               <td>D1</td>
               <td>200</td>
@@ -45,16 +58,19 @@ const Almacenamiento = () => {
               <td>Comida</td>
               <td>None</td>
               <td className="acciones">
-                {/*LOS ICONOS*/}
                 <Pencil size={18} className="icon-edit" />
                 <Trash2 size={18} className="icon-delete" />
-                {/*<span className="icon-edit">✏️</span>
-                <span className="icon-delete">🗑️</span> */}
               </td>
             </tr>
           </tbody>
         </table>
       </div>
+
+      {/* ===== MODAL ===== */}
+      {openModal && (
+        <Modal_Almacen cerrar={() => setOpenModal(false)} />
+      )}
+
     </div>
   );
 };

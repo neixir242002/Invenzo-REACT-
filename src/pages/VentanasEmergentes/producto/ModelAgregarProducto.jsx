@@ -1,11 +1,11 @@
 import React from "react";
 import "../../../Style/Models.css"
-const ModalAgregarProducto = () => {
+const ModalAgregarProducto = ({ cerrar }) =>  {
   return (
-   <div class="modal-container">
+   <div class="modal-container" onClick={cerrar}>
         <input type="checkbox"  class="modal-toggle"/>
 
-        <div class="modal-backdrop">
+        <div class="modal-backdrop" onClick={(e) => e.stopPropagation()}>
             <div class="modal-window-custom modal-form-custom">
 
                 <label class="modal-close-custom">✕</label>
@@ -89,7 +89,7 @@ const ModalAgregarProducto = () => {
                     <div class="modal-actions-custom">
                         <label for="modal-editar-producto-{{ producto.id }}"
                             class="modal-btn-secondary">Cancelar</label>
-                        <button type="submit" class="modal-btn-primary">Guardar cambios</button>
+                        <button type="submit" class="modal-btn-primary" onClick={cerrar}>Guardar cambios</button>
                     </div>
 
             </div>

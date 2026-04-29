@@ -1,6 +1,9 @@
 import React from 'react'
 import "../../../Style/Models.css"
 
+// ===============================
+// FALTA COLOCAR LAS INTRACCIONES
+// ===============================
 const ModalEditarProducto = () => {
   return (
     <div class="modal-container">

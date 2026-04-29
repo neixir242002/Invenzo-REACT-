@@ -1,38 +1,25 @@
-import React from "react";
+import React, { useState } from "react";
 import { Pencil, Trash2 } from "lucide-react";
 import "./Almacenamiento.css";
+import Modal_Almacen from "../../VentanasEmergentes/producto/Modal_Almacen";
 
-// Componente principal de la vista de almacenes
 const Almacenamiento = () => {
 
-  // Datos de ejemplo (luego esto vendrá de tu backend)
-  const almacenes = [
-    {
-      nombre: "Exito",
-      capacidad: 500,
-      disponible: 180,
-      tipo: "Comida",
-      seguridad: "None",
-    },
-    {
-      nombre: "D1",
-      capacidad: 200,
-      disponible: 80,
-      tipo: "Comida",
-      seguridad: "None",
-    },
-  ];
+  // ===== ESTADO DEL MODAL =====
+  const [openModal, setOpenModal] = useState(false);
 
   return (
-    // ===== CONTENEDOR PRINCIPAL =====
     <div className="almacen-container">
 
       {/* ===== HEADER ===== */}
       <div className="almacen-header">
         <h2>Almacenes</h2>
 
-        {/* Botón para abrir modal o crear nuevo almacén */}
-        <button className="btn-agregar">
+        {/* BOTÓN QUE ABRE EL MODAL */}
+        <button 
+          className="btn-agregar"
+          onClick={() => setOpenModal(true)}
+        >
           + Agregar Almacén
         </button>
       </div>
@@ -40,8 +27,6 @@ const Almacenamiento = () => {
       {/* ===== TABLA ===== */}
       <div className="tabla-container">
         <table className="tabla">
-
-          {/* Encabezado de la tabla */}
           <thead>
             <tr>
               <th>Nombre</th>
@@ -53,44 +38,39 @@ const Almacenamiento = () => {
             </tr>
           </thead>
 
-          {/* Cuerpo dinámico */}
           <tbody>
+            <tr className="textconten">
+              <td>Exito</td>
+              <td>500</td>
+              <td>180</td>
+              <td>Comida</td>
+              <td>None</td>
+              <td className="acciones">
+                <Pencil size={18} className="icon-edit" />
+                <Trash2 size={18} className="icon-delete" />
+              </td>
+            </tr>
 
-            {/* Recorremos los almacenes */}
-            {almacenes.map((item, index) => (
-              <tr key={index} className="textconten">
-                
-                {/* Datos del almacén */}
-                <td>{item.nombre}</td>
-                <td>{item.capacidad}</td>
-                <td>{item.disponible}</td>
-                <td>{item.tipo}</td>
-                <td>{item.seguridad}</td>
-
-                {/* Acciones */}
-                <td className="acciones">
-                  
-                  {/* Botón editar */}
-                  <Pencil 
-                    size={18} 
-                    className="icon-edit"
-                    title="Editar"
-                  />
-
-                  {/* Botón eliminar */}
-                  <Trash2 
-                    size={18} 
-                    className="icon-delete"
-                    title="Eliminar"
-                  />
-
-                </td>
-              </tr>
-            ))}
-
+            <tr className="textconten">
+              <td>D1</td>
+              <td>200</td>
+              <td>80</td>
+              <td>Comida</td>
+              <td>None</td>
+              <td className="acciones">
+                <Pencil size={18} className="icon-edit" />
+                <Trash2 size={18} className="icon-delete" />
+              </td>
+            </tr>
           </tbody>
         </table>
       </div>
+
+      {/* ===== MODAL ===== */}
+      {openModal && (
+        <Modal_Almacen cerrar={() => setOpenModal(false)} />
+      )}
+
     </div>
   );
 };

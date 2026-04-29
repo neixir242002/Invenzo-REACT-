@@ -1,5 +1,10 @@
 import React from 'react'
 import "../../../Style/Models.css"
+
+
+// ===============================
+// FALTA COLOCAR LAS INTRACCIONES
+// ===============================
 const ModelEliminarProducto = () => {
   return (
 <div class="modal-container">

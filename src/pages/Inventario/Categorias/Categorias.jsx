@@ -1,11 +1,18 @@
-import React from "react";
+import React, { useState } from "react";
 import { Pencil, Trash2, CheckCircle, XCircle } from "lucide-react";
 import "./Categorias.css";
 
-// Componente principal
+import ModelAgregarCategoria from "../../VentanasEmergentes/categoria/ModelAgregarCategoria";
+import ModeloEditarCategoria from "../../VentanasEmergentes/categoria/ModeloEditarCategoria";
+import ModelEliminarCategoria from "../../VentanasEmergentes/categoria/ModelEliminarCategoria";
+
 const Categorias = () => {
 
-  // Datos de ejemplo (luego vendrán del backend)
+  // 🔥 ESTADOS SEPARADOS (IMPORTANTE)
+  const [modalAgregar, setModalAgregar] = useState(false);
+  const [modalEditar, setModalEditar] = useState(false);
+  const [modalEliminar, setModalEliminar] = useState(false);
+
   const categorias = [
     {
       nombre: "Comida",
@@ -40,23 +47,23 @@ const Categorias = () => {
           <p>Administra las categorías de tus productos</p>
         </div>
 
-        {/* Botón para crear nueva categoría */}
-        <button className="btn-nueva">
+        {/* ✅ ABRE SOLO AGREGAR */}
+        <button 
+          className="btn primary"
+          onClick={() => setModalAgregar(true)}
+        >
           Nueva Categoría
         </button>
       </div>
 
-      {/* ===== BUSCADOR Y ACCIONES ===== */}
+      {/* ===== BUSCADOR ===== */}
       <div className="acciones">
-        
-        {/* Input de búsqueda */}
         <input 
           type="text" 
           placeholder="Buscar categorías..." 
           className="buscador"
         />
 
-        {/* Botones simples */}
         <div className="acciones-btns">
           <button>Filtrar</button>
           <button className="exportar">Exportar</button>
@@ -67,7 +74,6 @@ const Categorias = () => {
       <div className="tabla-container">
         <table className="tabla">
 
-          {/* Encabezado */}
           <thead>
             <tr>
               <th>NOMBRE</th>
@@ -79,12 +85,10 @@ const Categorias = () => {
             </tr>
           </thead>
 
-          {/* Cuerpo */}
           <tbody>
             {categorias.map((cat, index) => (
               <tr key={index}>
 
-                {/* Nombre */}
                 <td className="nombre">
                   <div className="circle"></div>
                   {cat.nombre}
@@ -94,7 +98,6 @@ const Categorias = () => {
                 <td>{cat.productos}</td>
                 <td>{cat.fecha}</td>
 
-                {/* Estado con icono */}
                 <td>
                   {cat.estado === "Activo" ? (
                     <span className="badge activo">
@@ -107,20 +110,38 @@ const Categorias = () => {
                   )}
                 </td>
 
-                {/* Acciones */}
+                {/* 🔥 ACCIONES */}
                 <td className="acciones-iconos">
 
-                  {/* Editar */}
-                  <Pencil className="icon editar" size={18} title="Editar" />
+                  {/* EDITAR */}
+                  <Pencil 
+                    className="icon editar" 
+                    size={18} 
+                    title="Editar"
+                    onClick={() => setModalEditar(true)}
+                  />
 
-                  {/* Eliminar */}
-                  <Trash2 className="icon eliminar" size={18} title="Eliminar" />
+                  {/* ELIMINAR */}
+                  <Trash2 
+                    className="icon eliminar" 
+                    size={18} 
+                    title="Eliminar"
+                    onClick={() => setModalEliminar(true)}
+                  />
 
-                  {/* Estado activo */}
-                  <CheckCircle className="icon activo-icon" size={18} title="Activar" />
+                  {/* ACTIVAR */}
+                  <CheckCircle 
+                    className="icon activo-icon" 
+                    size={18} 
+                    title="Activar"
+                  />
 
-                  {/* Estado inactivo (ROJO como pediste) */}
-                  <XCircle className="icon inactivo-icon" size={18} title="Desactivar" />
+                  {/* INACTIVO */}
+                  <XCircle 
+                    className="icon inactivo-icon" 
+                    size={18} 
+                    title="Desactivar"
+                  />
 
                 </td>
 
@@ -130,6 +151,20 @@ const Categorias = () => {
 
         </table>
       </div>
+
+      {/* ===== MODALES ===== */}
+
+      {modalAgregar && (
+        <ModelAgregarCategoria cerrar={() => setModalAgregar(false)} />
+      )}
+
+      {modalEditar && (
+        <ModeloEditarCategoria cerrar={() => setModalEditar(false)} />
+      )}
+
+      {modalEliminar && (
+        <ModelEliminarCategoria cerrar={() => setModalEliminar(false)} />
+      )}
 
     </div>
   );
