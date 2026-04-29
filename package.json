@@ -1,5 +1,9 @@
 {
+<<<<<<< HEAD
   "name": "invenzoproject",
+=======
+  "name": "invenzo",
+>>>>>>> 2d97dd30e7542195a6b78a83b4244a52d546e99d
   "private": true,
   "version": "0.0.0",
   "type": "module",
@@ -10,11 +14,17 @@
     "preview": "vite preview"
   },
   "dependencies": {
+<<<<<<< HEAD
     "lucide-react": "^1.9.0",
     "react": "^19.2.4",
     "react-dom": "^19.2.4",
     "react-router-dom": "^7.14.2",
     "recharts": "^3.8.1"
+=======
+    "lucide-react": "^1.8.0",
+    "react": "^19.2.4",
+    "react-dom": "^19.2.4"
+>>>>>>> 2d97dd30e7542195a6b78a83b4244a52d546e99d
   },
   "devDependencies": {
     "@eslint/js": "^9.39.4",

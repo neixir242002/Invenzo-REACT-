@@ -1,4 +1,5 @@
 import React from 'react'
+<<<<<<< HEAD
 
 //====================== Page models pantallas emergentes Imports ========================//
 import ModelAgregarCategoria from './pages/VentanasEmergentes/categoria/ModelAgregarCategoria'
@@ -37,10 +38,16 @@ import Login from './pages/Login/Login'
 import { Routes,Route } from "react-router-dom"
 import Base from './components/Base/Base'
 
+=======
+// import Almacenamiento from './Componetes/Inventario/Almacenamiento/Almacenamiento'
+// import Alerta_Stock from './Componetes/Inventario/Alerta_Stock/Alerta_Stock'
+import Control_Inventario from './Componetes/Inventario/Control_Inventario/Control_Inventario'
+>>>>>>> 2d97dd30e7542195a6b78a83b4244a52d546e99d
 
 const App = () => {
   return (
     <>
+<<<<<<< HEAD
       <Routes>
         {/* Rutas públicas */}
         <Route path="/" element={<Home />} />
@@ -63,4 +70,12 @@ const App = () => {
   )
 }
 
+=======
+      {/* <Almacenamiento/> */}
+      {/* <Alerta_Stock/> */}
+      <Control_Inventario/>
+    </>
+  )
+}
+>>>>>>> 2d97dd30e7542195a6b78a83b4244a52d546e99d
 export default App
