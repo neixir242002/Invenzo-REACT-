@@ -28,6 +28,10 @@
   font-weight: 500;
   transition: 0.3s;
 }
+.btn-agregar a{
+  text-decoration: none;
+  color: #fff;
+}
 
 .btn-agregar:hover {
   opacity: 0.9;

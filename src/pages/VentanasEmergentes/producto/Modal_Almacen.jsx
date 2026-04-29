@@ -1,5 +1,5 @@
 import React from "react";
-import "./Modal_Almacen.css";
+import "../../../Style/Modal_Almacen.css";
 
 const Modal_Almacen = () => {
   return (
