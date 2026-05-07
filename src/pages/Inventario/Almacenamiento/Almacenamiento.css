@@ -1,0 +1,79 @@
+.almacen-container {
+  padding: 30px;
+  background-color: #f4f6fb;
+  min-height: 100vh;
+  font-family: Arial, sans-serif;
+}
+
+.almacen-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.almacen-header h2 {
+  margin: 0;
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.btn-agregar {
+  background: linear-gradient(90deg, #5b6cff, #7f8cff);
+  color: #fff;
+  border: none;
+  padding: 10px 18px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 500;
+  transition: 0.3s;
+}
+.btn-agregar a{
+  text-decoration: none;
+  color: #fff;
+}
+
+.btn-agregar:hover {
+  opacity: 0.9;
+}
+
+.tabla-container {
+  background-color: #fff;
+  border-radius: 12px;
+  padding: 15px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+}
+
+.tabla {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.tabla thead {
+  color: #666;
+  font-size: 14px;
+  text-align: left;
+}
+
+.tabla tbody tr {
+  border-top: 1px solid #eee;
+  height: 50px;
+}
+
+.acciones {
+  display: flex;
+  gap: 10px;
+}
+
+.icon-edit {
+  color: #6c63ff;
+  cursor: pointer;
+}
+
+.icon-delete {
+  color: #333;
+  cursor: pointer;
+}
+.textconten{
+    text-align: start;
+}

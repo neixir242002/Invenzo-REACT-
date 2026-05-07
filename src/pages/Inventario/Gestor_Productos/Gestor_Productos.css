@@ -1,0 +1,130 @@
+.gestor-container {
+  padding: 30px;
+  background: #f4f6fb;
+  min-height: 100vh;
+  font-family: Arial, sans-serif;
+}
+
+/* Header */
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.header h2 {
+  margin: 0;
+  font-size: 26px;
+}
+
+.header p {
+  color: #6b7280;
+}
+
+/* Botón */
+.btn-nuevo {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: #2563eb;
+  color: #fff;
+  border: none;
+  padding: 10px 16px;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+/* Acciones */
+.acciones {
+  display: flex;
+  gap: 15px;
+  margin-bottom: 20px;
+  align-items: center;
+}
+
+.buscador {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: #fff;
+  padding: 10px;
+  border-radius: 10px;
+  border: 1px solid #e5e7eb;
+  width: 260px;
+}
+
+.buscador input {
+  border: none;
+  outline: none;
+  width: 100%;
+}
+
+.btn-exportar {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  background: none;
+  border: none;
+  color: #2563eb;
+  cursor: pointer;
+}
+
+/* Tabla */
+.tabla-container {
+  background: #fff;
+  padding: 15px;
+  border-radius: 14px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+}
+
+.tabla {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.tabla thead {
+  background: #f1f5f9;
+}
+
+.tabla th,
+.tabla td {
+  padding: 12px;
+  text-align: left;
+  border-bottom: 1px solid #eee;
+}
+
+/* Nombre con icono */
+.nombre {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.icon-box {
+  background: #e0f2fe;
+  padding: 8px;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Badge */
+.badge {
+  padding: 5px 10px;
+  border-radius: 10px;
+  font-size: 12px;
+}
+
+.activo {
+  background: #d1fae5;
+  color: #065f46;
+}
+
+/* Acciones */
+.acciones-tabla {
+  display: flex;
+  gap: 10px;
+  cursor: pointer;
+}

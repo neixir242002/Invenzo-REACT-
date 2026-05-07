@@ -1,0 +1,44 @@
+import React from 'react'
+import "../../../Style/Models.css"
+const ModelAgregarCategoria = () => {
+  return (
+    <div class="modal-container">
+        <input type="checkbox" id="modal-nueva" class="modal-toggle"/>
+
+        <div class="modal-backdrop">
+            <div class="modal-window-custom modal-form-custom">
+
+                <label for="modal-nueva" class="modal-close-custom">&times;</label>
+
+                <h2>Nueva Categoría</h2>
+
+                <form method="POST" action="{% url 'invenzo:crear_categoria' %}">
+
+                    <div class="field-group-custom">
+                        <label>Nombre</label>
+                        <input type="text" name="nombre" required/>
+                    </div>
+
+                    <div class="field-group-custom">
+                        <label>Descripción</label>
+                        <textarea name="descripcion"></textarea>
+                    </div>
+
+                    <div class="modal-actions-custom">
+                        <label for="modal-nueva" class="modal-btn-secondary">
+                            Cancelar
+                        </label>
+                        <button type="submit" class="modal-btn-primary">
+                            Guardar
+                        </button>
+                    </div>
+
+                </form>
+
+            </div>
+        </div>
+    </div>
+  )
+}
+
+export default ModelAgregarCategoria
