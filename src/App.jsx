@@ -1,76 +1,103 @@
-import React from "react";
+import { Routes, Route, useLocation, useNavigate } from "react-router-dom";
+import { useState } from "react";
 
-// ====================== MODALES ====================== //
-// (los dejas importados si los vas a usar luego)
-import ModelAgregarCategoria from './pages/VentanasEmergentes/categoria/ModelAgregarCategoria'
-import ModeloEditarCategoria from './pages/VentanasEmergentes/categoria/ModeloEditarCategoria'
-import ModelEliminarCategoria from './pages/VentanasEmergentes/categoria/ModelEliminarCategoria'
-import ModelAgregarProducto from './pages/VentanasEmergentes/producto/ModelAgregarProducto'
-import ModalEditarProducto from './pages/VentanasEmergentes/producto/ModalEditarProducto'
-import ModelEliminarProducto from './pages/VentanasEmergentes/producto/ModelEliminarProducto'
-import ModelCrearUsuario from './pages/VentanasEmergentes/usuario/ModelCrearUsuario'
-import ModelEditarUsuario from './pages/VentanasEmergentes/usuario/ModelEditarUsuario'
-import ModaResetUsuario from './pages/VentanasEmergentes/usuario/ModaResetUsuario'
-import Modal_Almacen from "./pages/VentanasEmergentes/producto/Modal_Almacen"
+import "./App.css";
+import "./index.css";
 
-// ====================== VISTAS PRINCIPALES ====================== //
-import Almacenamiento from './pages/Inventario/Almacenamiento/Almacenamiento'
-import Alerta_Stock from './pages/Inventario/Alerta_Stock/Alerta_Stock'
-import Categorias from './pages/Inventario/Categorias/Categorias'
-import Control_Inventario from './pages/Inventario/Control_Inventario/Control_Inventario'
-import Dashboard from './pages/Inventario/Dashboard/Dashboard'
-import Historial from './pages/Inventario/Historial/Historial'
-import Gestor_Productos from './pages/Inventario/Gestor_Productos/Gestor_Productos'
-import Productos_Inactivos from './pages/Inventario/Productos_Inactivos/Productos_Inactivos'
+import Home from "./pages/Home";
+import Login from "./pages/Login";
+import Register from "./pages/Register";
+import RecoverPassword from "./pages/RecoverPassword";
 
-// ====================== CONFIGURACIÓN ====================== //
-import { Configuracion } from './pages/Configuraciones/Configuracion/Configuracion'
-import ConfiguracionNotificaciones from './pages/Configuraciones/ConfiguracionNotificaciones/Configuracion_notificaciones'
-import PerfilUsuario from './pages/Configuraciones/ConfiguracionPerfil/Configuracion_perfil'
-import CrearUsuario from './pages/Configuraciones/CrearUsuario/Crear_usuario'
-import EditarUsuario from './pages/Configuraciones/EditarUsuario/Editar_usuario'
-import EliminarFoto from './pages/Configuraciones/EliminarFoto/Eliminar_foto'
-import GestionUsuarios from './pages/Configuraciones/GestionUsuarios/Gestion_usuarios'
+import Dashboard from "./pages/Dashboard";
+import Products from "./pages/Products";
+import ControlInventario from "./pages/ControlInventario";
+import Categories from "./pages/Categories";
+import History from "./pages/History";
+import StockAlerts from "./pages/StockAlerts";
+import Users from "./pages/Users";
+import Settings from "./pages/Settings";
 
-// ====================== AUTH ====================== //
-import Home from './pages/Home/Home'
-import Login from './pages/Login/Login'
+import Sidebar from "./conmponents/Sidebar";
+import Topbar from "./conmponents/Topbar";
 
-// ====================== ROUTER ====================== //
-import { Routes, Route } from "react-router-dom"
-import Base from './components/Base/Base'
+import { ProfileSettings } from "./pages/ProfileSettings";
+import { NotificationSettings } from "./pages/NotificationSettings";
 
-const App = () => {
+function App() {
+  const navigate = useNavigate();
+  const location = useLocation();
+
+  // Estado del sidebar
+  const [sidebarOpen, setSidebarOpen] = useState(true);
+
+  // Rutas públicas
+  const publicRoutes = ["/", "/login", "/register", "/recover"];
+
+  const isPublicRoute = publicRoutes.includes(location.pathname);
+
   return (
-    <Routes>
+    <div className={isPublicRoute ? "public-layout" : "app-layout"}>
 
-      {/* ===== RUTAS PÚBLICAS ===== */}
-      <Route path="/" element={<Home />} />
-      <Route path="/login" element={<Login />} />
+      {/* SIDEBAR SOLO EN PRIVADAS */}
+      {!isPublicRoute && (
+        <Sidebar
+          currentPage={location.pathname}
+          navigate={navigate}
+          isOpen={sidebarOpen}
+        />
+      )}
 
-      {/* ===== RUTAS PRIVADAS CON LAYOUT ===== */}
-      <Route path="/app" element={<Base />}>
+      <div className={isPublicRoute ? "public-main" : "main-area"}>
 
-        {/* Dashboard */}
-        <Route path="dashboard" element={<Dashboard />} />
+        {/* TOPBAR SOLO EN PRIVADAS */}
+        {!isPublicRoute && (
+          <Topbar
+            toggleSidebar={() => setSidebarOpen(!sidebarOpen)}
+          />
+        )}
 
-        {/* Inventario */}
-        <Route path="inventario" element={<Control_Inventario />} />
-        <Route path="categorias" element={<Categorias />} />
-        <Route path="historial" element={<Historial />} />
-        <Route path="alertas" element={<Alerta_Stock />} />
-        <Route path="almacen" element={<Almacenamiento />} />
-        
-        {/* Usuarios */}
-        <Route path="usuarios" element={<GestionUsuarios />} />
+        <div className="page-content">
 
-        {/* Configuración */}
-        <Route path="configuracion" element={<Configuracion />} />
+          <Routes>
 
-      </Route>
+            {/* PUBLICAS */}
+            <Route path="/" element={<Home />} />
+            <Route path="/login" element={<Login />} />
+            <Route path="/register" element={<Register />} />
+            <Route path="/recover" element={<RecoverPassword />} />
 
-    </Routes>
+            {/* PRIVADAS */}
+            <Route path="/dashboard" element={<Dashboard />} />
+            <Route path="/productos" element={<Products />} />
+
+            <Route
+              path="/control-inventario"
+              element={<ControlInventario />}
+            />
+
+            <Route path="/categorias" element={<Categories />} />
+            <Route path="/historial" element={<History />} />
+            <Route path="/stock-alerta" element={<StockAlerts />} />
+            <Route path="/usuarios" element={<Users />} />
+            <Route path="/configuracion" element={<Settings />} />
+
+            <Route
+              path="/profile"
+              element={<ProfileSettings />}
+            />
+
+            <Route
+              path="/notifications"
+              element={<NotificationSettings />}
+            />
+
+          </Routes>
+
+        </div>
+      </div>
+    </div>
   );
-};
+}
 
 export default App;
