@@ -1,0 +1,146 @@
+.categorias-container {
+  padding: 30px;
+  background: #f4f6fb;
+  min-height: 100vh;
+  font-family: Arial, sans-serif;
+}
+
+/* ===== HEADER ===== */
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 25px;
+}
+
+.header h2 {
+  margin: 0;
+}
+
+.header p {
+  color: #6b7280;
+}
+
+/* Botón */
+.btn-nueva {
+  background: #2563eb;
+  color: white;
+  border: none;
+  padding: 10px 18px;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+/* ===== ACCIONES ===== */
+.acciones {
+  display: flex;
+  gap: 15px;
+  margin-bottom: 20px;
+}
+
+.buscador {
+  padding: 10px;
+  border-radius: 8px;
+  border: 1px solid #ddd;
+  width: 250px;
+}
+
+.acciones-btns button {
+  padding: 8px 12px;
+  border: none;
+  cursor: pointer;
+}
+
+.exportar {
+  color: #2563eb;
+  background: none;
+}
+
+/* ===== TABLA ===== */
+.tabla-container {
+  background: white;
+  border-radius: 14px;
+  padding: 15px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+}
+
+.tabla {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.tabla thead {
+  background: #f1f5f9;
+}
+
+.tabla th,
+.tabla td {
+  padding: 12px;
+  border-bottom: 1px solid #eee;
+  text-align: left;
+}
+
+/* Nombre con círculo */
+.nombre {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.circle {
+  width: 14px;
+  height: 14px;
+  background: #cbd5f5;
+  border-radius: 50%;
+}
+
+/* ===== BADGES ===== */
+.badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  padding: 5px 10px;
+  border-radius: 10px;
+  font-size: 12px;
+}
+
+.activo {
+  background: #d1fae5;
+  color: #065f46;
+}
+
+.inactivo {
+  background: #fee2e2;
+  color: #b91c1c; /* rojo */
+}
+
+/* ===== ICONOS ===== */
+.acciones-iconos {
+  display: flex;
+  gap: 10px;
+}
+
+/* Estilos individuales */
+.icon {
+  cursor: pointer;
+}
+
+/* Editar */
+.editar {
+  color: #6c63ff;
+}
+
+/* Eliminar */
+.eliminar {
+  color: #374151;
+}
+
+/* Activar */
+.activo-icon {
+  color: #16a34a;
+}
+
+/* Inactivo (ROJO) */
+.inactivo-icon {
+  color: #dc2626;
+}
