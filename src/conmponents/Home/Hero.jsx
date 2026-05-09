@@ -9,7 +9,7 @@ const Hero = () => {
         <section className="hero">
             <div className="hero-content">
                 <h1>
-                    Gestiona tu inventario de forma 
+                    Gestiona tu inventario de forma
                     <span className="highlight"> simple y eficiente</span>
                 </h1>
 
@@ -18,8 +18,9 @@ const Hero = () => {
                 </p>
 
                 <div className="hero-buttons">
-                    <button 
-                        className="btn-primary" 
+                    <button className="btn-primary" onClick={() => navigate("/login")}>Iniciar sesión</button>
+                    <button
+                        className="btn-primary"
                         onClick={() => navigate("/register")}
                     >
                         Empieza ahora gratis

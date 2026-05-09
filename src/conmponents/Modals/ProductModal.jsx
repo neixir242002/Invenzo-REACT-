@@ -9,6 +9,20 @@ export default function ProductModal({
 
     if (!showModal) return null;
 
+    const handleSubmit = () => {
+        if (
+            !newProd.nombre.trim() ||
+            !newProd.codigo.trim() ||
+            !newProd.categoria.trim()
+        ) {
+            alert("Nombre, Código y Categoría son obligatorios");
+            return;
+        }
+
+        handleSave();        
+        setShowModal(false); 
+    };
+
     return (
         <div
             className="modal-overlay"
@@ -30,7 +44,7 @@ export default function ProductModal({
                 <div className="modal-body">
 
                     <div className="form-group">
-                        <label>Nombre</label>
+                        <label>Nombre *</label>
                         <input
                             value={newProd.nombre}
                             onChange={e =>
@@ -43,7 +57,7 @@ export default function ProductModal({
                     </div>
 
                     <div className="form-group">
-                        <label>Código</label>
+                        <label>Código *</label>
                         <input
                             value={newProd.codigo}
                             onChange={e =>
@@ -56,7 +70,7 @@ export default function ProductModal({
                     </div>
 
                     <div className="form-group">
-                        <label>Categoría</label>
+                        <label>Categoría *</label>
                         <input
                             value={newProd.categoria}
                             onChange={e =>
@@ -120,7 +134,7 @@ export default function ProductModal({
 
                     <button
                         className="btn-primary"
-                        onClick={handleSave}
+                        onClick={handleSubmit}
                     >
                         Guardar
                     </button>

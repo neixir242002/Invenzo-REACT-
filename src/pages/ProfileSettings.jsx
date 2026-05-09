@@ -1,5 +1,8 @@
 // export { ProfileSettings as default } from "./OtherPages";
 import { useState } from "react";
+import {
+    User
+} from "../icons";
 
 export function ProfileSettings({ addFlash }) {
     const { useAuth: ua } = { useAuth: () => ({}) }; // placeholder
@@ -18,9 +21,7 @@ export function ProfileSettings({ addFlash }) {
                     <h3>Foto de Perfil</h3>
                     <div className="profile-avatar-box">
                         <div className="profile-avatar-big">
-                            <svg width="60" height="60" viewBox="0 0 24 24" fill="none" stroke="#0077B6" strokeWidth="1">
-                                <circle cx="12" cy="8" r="4" /><path d="M20 21a8 8 0 1 0-16 0" />
-                            </svg>
+                            <User size={60} />
                         </div>
                     </div>
                     <div className="form-group"><input type="file" /></div>

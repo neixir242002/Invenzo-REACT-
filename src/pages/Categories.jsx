@@ -1,6 +1,6 @@
 // export { Categories as default } from "./OtherPages";
 import { useState } from "react";
-import { Plus, Search, Pencil, Trash2, Tag, Download } from "../icons";
+import { Plus, Search, Pencil, Trash2, Tag } from "../icons";
 import CategoryModal from "../conmponents/modals/CategoryModal";
 
 
@@ -36,17 +36,6 @@ function Categories({ addFlash }) {
         <div className="page">
             <div className="page-header">
                 <div><h1>Gestión de Categorías</h1><p>Administra las categorías de tus productos</p></div>
-                <button
-                    className="btn-primary"
-                    onClick={() => {
-                        setEditCat(null);
-                        setForm({ nombre: "", descripcion: "" });
-                        setShowModal(true);
-                    }}
-                >
-                    <Plus size={18} />
-                    Nueva Categoría
-                </button>
             </div>
 
             <div className="filters-bar">
@@ -59,10 +48,19 @@ function Categories({ addFlash }) {
                         onChange={e => setSearch(e.target.value)}
                     />
                 </div>
-                <button className="btn-secondary">
-                    <Download size={18} />
-                    Exportar
+
+                <button
+                    className="btn-primary"
+                    onClick={() => {
+                        setEditCat(null);
+                        setForm({ nombre: "", descripcion: "" });
+                        setShowModal(true);
+                    }}
+                >
+                    <Plus size={18} />
+                    Nueva Categoría
                 </button>
+
             </div>
 
             <div className="card table-card">
@@ -73,8 +71,14 @@ function Categories({ addFlash }) {
                             <tr key={c.id}>
 
                                 <td>
-                                    <strong className="category-name">
-                                        <Tag size={16} style={{ marginRight: '8px' }} />
+                                    <strong
+                                        className="category-name"
+                                        style={{
+                                            display: "flex",
+                                            alignItems: "center"
+                                        }}
+                                    >
+                                        <Tag size={16} style={{ marginRight: "8px" }} />
                                         {c.nombre}
                                     </strong>
                                 </td>

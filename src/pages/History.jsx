@@ -8,7 +8,7 @@ const HISTORY_DATA = [
     { id: 3, producto: "Teclado HP K120", codigo: "TEC-003", tipo: "entrada", cantidad: 5, fecha: "2025-12-09 14:20", usuario: "Admin", categoria: "Accesorios", observacion: "" },
 ];
 
-export function History() {
+export function History( {addFlash } ) {
     const [search, setSearch] = useState("");
     const [tipo, setTipo] = useState("");
     const [fecha, setFecha] = useState("");

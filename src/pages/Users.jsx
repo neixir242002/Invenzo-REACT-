@@ -45,13 +45,6 @@ export function Users({ addFlash }) {
         <div className="page">
             <div className="page-header">
                 <div><h1>Gestión de Usuarios</h1><p>Administra los usuarios y permisos</p></div>
-                <button
-                    className="btn-primary"
-                    onClick={() => setShowModal(true)}
-                >
-                    <Plus size={18} />
-                    Nuevo Usuario
-                </button>
             </div>
 
             <div className="filters-bar">
@@ -64,6 +57,13 @@ export function Users({ addFlash }) {
                     <option value="administrador">Administrador</option>
                     <option value="auxiliar">Auxiliar</option>
                 </select>
+                <button
+                    className="btn-primary"
+                    onClick={() => setShowModal(true)}
+                >
+                    <Plus size={18} />
+                    Nuevo Usuario
+                </button>
             </div>
 
             <div className="card table-card">

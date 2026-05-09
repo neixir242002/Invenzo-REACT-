@@ -24,8 +24,13 @@ export function NotificationSettings({ addFlash }) {
             <div className="page-header"><h1>Configuración de Notificaciones</h1></div>
             <div className="card" style={{ maxWidth: 600 }}>
                 <form onSubmit={handleSave}>
-                    <h3>
-                        <Bell size={18} style={{ marginRight: '8px' }} />
+                    <h3
+                        style={{
+                            display: "flex",
+                            alignItems: "center",
+                        }}
+                    >
+                        <Bell size={18} style={{ marginRight: "8px" }} />
                         Notificaciones del Sistema
                     </h3>
                     {[["alertas_stock", "Alertas de Stock"], ["movimientos", "Movimientos de Inventario"], ["productos_nuevos", "Productos Nuevos"]].map(([key, label]) => (
@@ -38,7 +43,12 @@ export function NotificationSettings({ addFlash }) {
                         </div>
                     ))}
                     <hr style={{ margin: "20px 0" }} />
-                    <h3>
+                    <h3
+                        style={{
+                            display: "flex",
+                            alignItems: "center",
+                        }}
+                    >
                         <Mail size={18} style={{ marginRight: '8px' }} />
                         Notificaciones por Email
                     </h3>

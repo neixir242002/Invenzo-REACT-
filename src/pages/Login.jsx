@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import { Mail, Lock, Box } from "../icons";
+import { Mail, Lock, Box, LogOut } from "../icons";
 
 export default function Login() {
 
@@ -23,6 +23,14 @@ export default function Login() {
     return (
         <div className="auth-page">
             <div className="auth-left">
+            <div className="login-top">
+                    <button
+                        className="back-home-btn"
+                        onClick={() => navigate("/")}
+                    >
+                        <LogOut size={18} />
+                    </button>
+                </div>
                 <div className="auth-brand">
                     <Box size={60} color="currentColor" strokeWidth={1.5} />
                     <span>Invenzo</span>

@@ -28,6 +28,7 @@ import {
     FolderTree,
     BarChart3,
     Save,
+    Layers
 } from "lucide-react";
 
 export {
@@ -60,4 +61,5 @@ export {
     FolderTree,
     BarChart3,
     Save,
+    Layers,
 };

@@ -1,18 +1,19 @@
 // import React from 'react'
 
 import {
-    FolderTree,
+    // FolderTree,
     Package,
     RefreshCw,
     Bell,
     BarChart3,
-    Users
+    Users,
+    Layers,
 } from "../../icons";
 
 const Caracteristica = () => {
     const features = [
         {
-            icon: FolderTree,
+            icon: Layers,
             title: "Gestión de Categorías",
             desc: "Organiza tus productos en categorías personalizables para facilitar su búsqueda y gestión."
         },

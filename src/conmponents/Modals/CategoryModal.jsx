@@ -9,6 +9,17 @@ export default function CategoryModal({
 
     if (!showModal) return null;
 
+    const handleSubmit = () => {
+
+        if (!form.nombre.trim()) {
+            alert("El nombre de la categoría es obligatorio");
+            return;
+        }
+
+        handleSave();
+        setShowModal(false);
+    };
+
     return (
         <div className="modal-overlay" onClick={() => setShowModal(false)}>
             <div className="modal" onClick={e => e.stopPropagation()}>
@@ -41,7 +52,10 @@ export default function CategoryModal({
                         Cancelar
                     </button>
 
-                    <button className="btn-primary" onClick={handleSave}>
+                    <button
+                        className="btn-primary"
+                        onClick={handleSubmit}
+                    >
                         Guardar
                     </button>
                 </div>

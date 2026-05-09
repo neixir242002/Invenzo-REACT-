@@ -1,5 +1,5 @@
 // import React from 'react'
-import { Mail, Lock, User, Box } from "../icons";
+import { Mail, Lock, User, Box, LogOut } from "../icons";
 import { useNavigate } from "react-router-dom";
 import { useState } from "react";
 
@@ -21,6 +21,14 @@ export default function Register() {
     return (
         <div className="auth-page register-page">
             <div className="register-box">
+            <div className="login-top">
+                    <button
+                        className="back-home-btn"
+                        onClick={() => navigate("/")}
+                    >
+                        <LogOut size={18} />
+                    </button>
+                </div>
                 <h2>Crear una cuenta</h2>
 
                 <form onSubmit={handleSubmit}>

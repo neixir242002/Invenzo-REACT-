@@ -1,12 +1,14 @@
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 // import { useAuth } from "../context/AuthContext";
 import {
   Menu, Bell, User
 } from "../icons";
 
 
-export default function Topbar({ navigate, toggleSidebar }) {
+export default function Topbar({ toggleSidebar }) {
   // const { user } = useAuth();
+  const navigate = useNavigate();
   const [notifOpen, setNotifOpen] = useState(false);
 
   return (
@@ -46,7 +48,9 @@ export default function Topbar({ navigate, toggleSidebar }) {
           </div>
 
           {/* <span>{user?.nombre || "Usuario"}</span> */}
-          <span>Usuario</span>
+          <span onClick={() => navigate("/profile")}>
+            Usuario
+          </span>
         </button>
 
       </div>

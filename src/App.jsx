@@ -25,6 +25,11 @@ import { ProfileSettings } from "./pages/ProfileSettings";
 import { NotificationSettings } from "./pages/NotificationSettings";
 
 function App() {
+  const [flash, setFlash] = useState("");
+
+  const addFlash = (msg) => {
+    setFlash(msg);
+  };
   const navigate = useNavigate();
   const location = useLocation();
 
@@ -68,19 +73,19 @@ function App() {
             <Route path="/recover" element={<RecoverPassword />} />
 
             {/* PRIVADAS */}
-            <Route path="/dashboard" element={<Dashboard />} />
-            <Route path="/productos" element={<Products />} />
+            <Route path="/dashboard" element={<Dashboard addFlash={addFlash} />} />
+            <Route path="/productos" element={<Products addFlash={addFlash} />} />
 
             <Route
               path="/control-inventario"
               element={<ControlInventario />}
             />
 
-            <Route path="/categorias" element={<Categories />} />
-            <Route path="/historial" element={<History />} />
-            <Route path="/stock-alerta" element={<StockAlerts />} />
-            <Route path="/usuarios" element={<Users />} />
-            <Route path="/configuracion" element={<Settings />} />
+            <Route path="/categorias" element={<Categories addFlash={addFlash} />} />
+            <Route path="/historial" element={<History addFlash={addFlash} />} />
+            <Route path="/stock-alerta" element={<StockAlerts addFlash={addFlash} />} />
+            <Route path="/usuarios" element={<Users addFlash={addFlash} />} />
+            <Route path="/configuracion" element={<Settings addFlash={addFlash} />} />
 
             <Route
               path="/profile"

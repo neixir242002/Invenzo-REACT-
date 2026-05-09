@@ -1,6 +1,7 @@
 import { Mail, CheckCircle, Box } from "../icons";
 import { useNavigate } from "react-router-dom";
 import { useState } from "react";
+import { LogOut } from "../icons";
 
 export default function RecoverPassword() {
     const navigate = useNavigate();
@@ -10,6 +11,14 @@ export default function RecoverPassword() {
     return (
         <div className="auth-page">
             <div className="auth-left">
+            <div className="login-top">
+                        <button
+                            className="back-home-btn"
+                            onClick={() => navigate("/")}
+                        >
+                            <LogOut size={18} />
+                        </button>
+                    </div>
                 <div className="auth-brand">
                     <Box size={60} color="currentColor" strokeWidth={1.5} />
                     <span>Invenzo</span>
@@ -31,7 +40,7 @@ export default function RecoverPassword() {
                     {sent && (
                         <div className="success-box">
                             <p className="success-message">
-                            <CheckCircle size={18} style={{ marginRight: '8px' }} />
+                                <CheckCircle size={18} style={{ marginRight: '8px' }} />
                                 <span>
                                     <strong>¡Correo enviado!</strong>
                                     {/* <CheckCircle size={18} /> */}

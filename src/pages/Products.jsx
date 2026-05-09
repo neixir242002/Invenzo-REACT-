@@ -1,5 +1,6 @@
 import { useState } from "react";
 import ProductModal from "../conmponents/modals/ProductModal";
+import { exportarExcel } from "../utils/exportExcel";
 import {
   Plus,
   Search,
@@ -46,7 +47,13 @@ export default function Products({ addFlash }) {
       setProducts(prev =>
         prev.map(p =>
           p.id === editProduct.id
-            ? { ...p, ...newProd, precio: +newProd.precio, cantidad: +newProd.cantidad, stock_minimo: +newProd.stock_minimo }
+            ? {
+              ...p,
+              ...newProd,
+              precio: +newProd.precio,
+              cantidad: +newProd.cantidad,
+              stock_minimo: +newProd.stock_minimo
+            }
             : p
         )
       );
@@ -119,6 +126,28 @@ export default function Products({ addFlash }) {
           <h1>Gestión de Productos</h1>
           <p>Administra tu catálogo de productos</p>
         </div>
+      </div>
+
+      {/* Filters */}
+      <div className="filters-bar">
+
+        <div className="search-box">
+          <Search size={16} />
+          <input
+            type="text"
+            placeholder="Buscar productos..."
+            value={search}
+            onChange={(e) => setSearch(e.target.value)}
+          />
+        </div>
+
+        <button
+          className="btn-secondary"
+          onClick={() => exportarExcel(products)}
+        >
+          <Download size={18} />
+          Exportar
+        </button>
 
         <button
           className="btn-primary"
@@ -137,27 +166,6 @@ export default function Products({ addFlash }) {
         >
           <Plus size={18} />
           Nuevo Producto
-        </button>
-
-
-      </div>
-
-      {/* Filters */}
-      <div className="filters-bar">
-
-        <div className="search-box">
-          <Search size={16} />
-          <input
-            type="text"
-            placeholder="Buscar productos..."
-            value={search}
-            onChange={(e) => setSearch(e.target.value)}
-          />
-        </div>
-
-        <button className="btn-secondary">
-          <Download size={18} />
-          Exportar
         </button>
 
       </div>
